@@ -99,7 +99,7 @@
       },
       methods: {
         fetchClients() {
-          axios.get('http://localhost:8080/api/customers')
+          axios.get('http://nixegourmet.cleverapps.io/api/customers')
             .then(response => {
               this.clients = response.data;
             })

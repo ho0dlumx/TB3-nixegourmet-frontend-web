@@ -89,7 +89,7 @@
                 },
                 methods: {
                     addProduct() {
-                        axios.post('http://localhost:8080/api/products', this.product)
+                        axios.post('http://nixegourmet.cleverapps.io/api/products', this.product)
                         .then(response => {
                             alert('Product added successfully!');
                             this.resetForm();

@@ -99,7 +99,7 @@
           },
           methods: {
             loadEmployeeData() {
-              axios.get('http://localhost:8080/api/employees/' + this.searchId)
+              axios.get('http://nixegourmet.cleverapps.io/api/employees/' + this.searchId)
                 .then(response => {
                   this.employees = response.data;
                 })
@@ -109,7 +109,7 @@
                 });
             },
             updateEmployee() {
-              axios.put('http://localhost:8080/api/employees/' + this.employees.employeeId, this.employees)
+              axios.put('http://nixegourmet.cleverapps.io/api/employees/' + this.employees.employeeId, this.employees)
                 .then(() => {
                   console.log('Product updated successfully');
                   alert('Product updated successfully')

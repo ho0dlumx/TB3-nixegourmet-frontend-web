@@ -99,7 +99,7 @@
           },
           methods: {
             loadProductData() {
-              axios.get('http://localhost:8080/api/products/' + this.searchId)
+              axios.get('http://nixegourmet.cleverapps.io/api/products/' + this.searchId)
                 .then(response => {
                   this.products = response.data;
                 })
@@ -109,7 +109,7 @@
                 });
             },
             updateProduct() {
-                axios.put('http://localhost:8080/api/products/' + this.products.productID, this.products)
+                axios.put('http://nixegourmet.cleverapps.io/api/products/' + this.products.productID, this.products)
                     .then(() => {
                     console.log('Product updated successfully');
                     alert('Product Edited successfully')

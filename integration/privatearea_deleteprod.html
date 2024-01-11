@@ -99,7 +99,7 @@
           },
           methods: {
             loadProductData() {
-              axios.get('http://localhost:8080/api/products/' + this.searchId)
+              axios.get('http://nixegourmet.cleverapps.io/api/products/' + this.searchId)
                 .then(response => {
                   this.products = response.data;
                 })
@@ -109,7 +109,7 @@
                 });
             },
             deleteProduct() {
-              axios.delete('http://localhost:8080/api/products/' + this.products.productID)
+              axios.delete('http://nixegourmet.cleverapps.io/api/products/' + this.products.productID)
                 .then(() => {
                   console.log('Product deleted successfully');
                   alert('Product deleted successfully')

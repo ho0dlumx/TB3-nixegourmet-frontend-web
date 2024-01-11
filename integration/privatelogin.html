@@ -72,7 +72,7 @@
         },
         methods: {
             checkLogin() {
-                axios.get('http://localhost:8080/api/employees?email=' + encodeURIComponent(this.email))
+                axios.get('http://nixegourmet.cleverapps.io/api/employees?email=' + encodeURIComponent(this.email))
                 .then(response => {
                     const employee = response.data.find(emp => emp.email === this.email);
                     if (employee && employee.password === this.password) {

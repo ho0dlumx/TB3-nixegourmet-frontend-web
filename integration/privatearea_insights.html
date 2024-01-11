@@ -87,7 +87,7 @@
             },
             methods: {
                 fetchNumberOfOrders() {
-                    axios.get('http://localhost:8080/api/order-items/count')
+                    axios.get('http://nixegourmet.cleverapps.io/api/order-items/count')
                     .then(response => {
                         this.numberOfOrders = response.data;
                     })
@@ -98,7 +98,7 @@
 
                 },
                 fetchTotalRevenue() {
-                    axios.get('http://localhost:8080/api/orders/totalRevenue')
+                    axios.get('http://nixegourmet.cleverapps.io/api/orders/totalRevenue')
                         .then(response => {
                             this.totalRevenue = response.data;
                         })
@@ -108,7 +108,7 @@
                         });
                 },
                 fetchSalesAmount() {
-                    axios.get('http://localhost:8080/api/orders/salesAmount')
+                    axios.get('http://nixegourmet.cleverapps.io/api/orders/salesAmount')
                         .then(response => {
                             this.salesAmount = response.data;
                         })

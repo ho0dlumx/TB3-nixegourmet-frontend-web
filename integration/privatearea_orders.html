@@ -114,7 +114,7 @@
           },
           methods: {
             fetchOrders() {
-              axios.get('http://localhost:8080/api/orders')
+              axios.get('http://nixegourmet.cleverapps.io/api/orders')
                 .then(response => {
                   this.orders = response.data;
                   this.orders.forEach(order => this.fetchOrderItems(order.orderId));
@@ -124,7 +124,7 @@
                 });
             },
             fetchProducts() {
-              axios.get('http://localhost:8080/api/products')
+              axios.get('http://nixegourmet.cleverapps.io/api/products')
                 .then(response => {
                   this.products = response.data.reduce((obj, product) => {
                     obj[product.productID] = product;
@@ -136,7 +136,7 @@
                 });
             },
             fetchOrderItems(orderId) {
-              axios.get(`http://localhost:8080/api/order-items/by-order/${orderId}`)
+              axios.get(`http://nixegourmet.cleverapps.io/api/order-items/by-order/${orderId}`)
                 .then(response => {
                   Vue.set(this.orderItems, orderId, response.data);
                 })
@@ -149,7 +149,7 @@
                 this.fetchOrders();
               } else {
                 const searchIdNum = Number(this.searchId.trim());
-                axios.get(`http://localhost:8080/api/orders/${searchIdNum}`)
+                axios.get(`http://nixegourmet.cleverapps.io/api/orders/${searchIdNum}`)
                   .then(response => {
                     this.orders = [response.data];
                     this.fetchOrderItems(searchIdNum);
@@ -162,7 +162,7 @@
             },
             saveOrders() {
               this.orders.forEach(order => {
-                axios.put(`http://localhost:8080/api/orders/${order.orderId}`, order)
+                axios.put(`http://nixegourmet.cleverapps.io/api/orders/${order.orderId}`, order)
                   .then(response => {
                     console.log('Order saved:', response.data);
                   })
