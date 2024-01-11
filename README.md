@@ -1,8 +1,8 @@
 # Authors
-    BONFIM FRANÇA Louise
-    DO PRADO GONÇALVES Laura
-    ROSA FREIRE SOUSA Camilla
-    VILLANOVA VECCHIO Gustavo
+- BONFIM FRANÇA Louise
+- DO PRADO GONÇALVES Laura
+- ROSA FREIRE SOUSA Camilla
+- VILLANOVA VECCHIO Gustavo
 
 # Requirements
     Python3
