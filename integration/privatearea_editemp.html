@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nixe Gourmet - Employees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+    <link href="assets/stylesheets/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+    <body id="private_area_body">
+    <section id="private_area">
+        <section id="menu_private">
+            <img class="logo_menu_private_img" src="assets/images/logo_menu_white.png">
+            <nav class="menu_private_text_block">
+                <ul>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_insights.png">
+                        <li><a href="./privatearea_insights.html"  > App insights </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_orders.png">
+                        <li><a href="./privatearea_orders.html"  > Orders </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_products.png">
+                        <li><a href="./privatearea_products.html" > Products </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_emp.png">
+                        <li><a href="./privatearea_emp.html" id="current_private"> Employees </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/clients.png">
+                        <li><a href="./privatearea_clients.html" > Clients </a></li>
+                    </div>
+                </ul>
+            </nav>
+            <div class="logout_aux" onclick="window.location.href='./home.html'"></div>
+        </section>
+
+        <section id="extras" >
+            <div id="app">
+                <h1 class="private_titles"> <span id="pink_destaques"> Edit </span> employee </h1>
+                <div class="search_box_block">
+                <div class="search_box_text">
+                    <div class="product_search">
+                    <p class="search_text_emp">Select the employee:</p>
+                    <input type="text" v-model="searchId" id="search_box_emp">
+                    </div>
+                </div>
+                <button class="btn_load_emp" @click="loadEmployeeData">
+                  <p  class="btn_load_emp_text"> Load data </p>
+                </button>
+                </div>
+                <div class="data_text_prod">
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Name: </span></p>
+                        <input type="text" v-model="employees.name" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Email: </span></p>
+                        <input type="text" v-model="employees.email" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Role: </span></p>
+                        <input type="text" v-model="employees.role" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Permission: </span></p>
+                        <input type="text" v-model="employees.permission" id="type_box_emp">
+                    </div>
+                </div>
+                <button class="btn_save_reload" @click="updateEmployee">
+                <div class="aux_save_reload">
+                    <img class="icon_save_reload" src="assets/images/edit.png">
+                    <p class="btn_txt"> Edit employee </p>
+                </div>
+                </button>
+            </div>
+    </section>
+    <script>
+        new Vue({
+          el: '#app',
+          data: {
+            searchId: '',
+            employees: {
+                employee_id: '',
+                name: '',
+                email: '',
+                password: '',
+                role: '',
+                permission: ''
+            }
+          },
+          methods: {
+            loadEmployeeData() {
+              axios.get('http://localhost:8080/api/employees/' + this.searchId)
+                .then(response => {
+                  this.employees = response.data;
+                })
+                .catch(error => {
+                    alert('Error fetching product data:')
+                  console.error('Error fetching product data:', error);
+                });
+            },
+            updateEmployee() {
+              axios.put('http://localhost:8080/api/employees/' + this.employees.employeeId, this.employees)
+                .then(() => {
+                  console.log('Product updated successfully');
+                  alert('Product updated successfully')
+                  this.resetForm();
+                })
+                .catch(error => {
+                  alert('Error deleting product:')  
+                  console.error('Error updating product:', error);
+                });
+            },
+            resetForm() {
+                        this.employees.employeeId = '';
+                        this.employees.name = '';
+                        this.employees.email = '';
+                        this.employees.password = '';
+                        this.employees.role = '';
+                        this.employees.permission = '';
+                    }
+          }
+        });
+      </script>
+
+
+  </body>

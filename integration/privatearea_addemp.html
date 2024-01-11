@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nixe Gourmet - Employees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+    <link href="assets/stylesheets/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body id="private_area_body">
+    <section id="private_area">
+        <section id="menu_private">
+            <img class="logo_menu_private_img" src="assets/images/logo_menu_white.png">
+            <nav class="menu_private_text_block">
+                <ul>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_insights.png">
+                        <li><a href="./privatearea_insights.html"  > App insights </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_orders.png">
+                        <li><a href="./privatearea_orders.html"  > Orders </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_products.png">
+                        <li><a href="./privatearea_products.html" > Products </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_emp.png">
+                        <li><a href="./privatearea_emp.html" id="current_private"> Employees </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/clients.png">
+                        <li><a href="./privatearea_clients.html" > Clients </a></li>
+                    </div>
+                </ul>
+            </nav>
+            <div class="logout_aux" onclick="window.location.href='./home.html'"></div>
+        </section>
+
+        <section id="extras">
+            <div id="app">
+    
+                <h1 class="private_titles"> <span id="pink_destaques"> Add </span> employee </h1>
+                
+                <div class="data_text_prod">
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Name: </span></p>
+                        <input type="text" v-model="employee.name" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Email: </span></p>
+                        <input type="text" v-model="employee.email" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Password: </span></p>
+                        <input type="text" v-model="employee.password" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Role: </span></p>
+                        <input type="text" v-model="employee.role" id="type_box_emp">
+                    </div>
+                    <div class="emp_search">
+                        <p class="type_text_emp"><span id="pink_destaques"> Permission: </span></p>
+                        <input type="text" v-model="employee.permission" id="type_box_emp">
+                    </div>
+                </div>
+                <button class="btn_save_reload" @click.prevent="addEmployees">
+                    <div class="aux_save_reload">
+                        <img class="icon_save_reload" src="assets/images/Add.png">
+                        <ul><li><a href="./privatearea_addprod.html"> Add employee</a></li></ul>
+                    </div>
+                </button>
+            </div>
+        </section>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    employee: {
+                        employee_id: '',
+                        name: '',
+                        email: '',
+                        password: '',
+                        role: '',
+                        permission: ''
+                    }
+                },
+                methods: {
+                    addEmployees() {
+                        axios.post('http://localhost:8080/api/employees', this.employee)
+                        .then(response => {
+                            alert('Product added successfully!');
+                            this.resetForm();
+                        })
+                        .catch(error => {
+                            alert('Failed to add employee. See console for more details.');
+                            console.error('Error:', error);
+                        });
+                    },
+                    resetForm() {
+                        this.employees.employeeId = '';
+                        this.employees.name = '';
+                        this.employees.email = '';
+                        this.employees.password = '';
+                        this.employees.role = '';
+                        this.employees.permission = '';
+                    }
+                }
+            });
+        </script>
+
+
+
+
+
+
+  </body>

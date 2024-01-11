@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nixe Gourmet - Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+    <link href="assets/stylesheets/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body id="private_area_body">
+    <section id="private_area">
+        <section id="menu_private">
+            <img class="logo_menu_private_img" src="assets/images/logo_menu_white.png">
+            <nav class="menu_private_text_block">
+                <ul>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_insights.png">
+                        <li><a href="./privatearea_insights.html"  > App insights </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_orders.png">
+                        <li><a href="./privatearea_orders.html"  id="current_private"> Orders </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_products.png">
+                        <li><a href="./privatearea_products.html" > Products </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/icon_emp.png">
+                        <li><a href="./privatearea_emp.html" > Employees </a></li>
+                    </div>
+                    <div class="menu_private_text">
+                        <img class="icon_menu_private" src="assets/images/clients.png">
+                        <li><a href="./privatearea_clients.html" > Clients </a></li>
+                    </div>
+                </ul>
+            </nav>
+            <div class="logout_aux" onclick="window.location.href='./home.html'"></div>
+        </section>
+        <section id="orders">
+            <div id="app">
+                <h1 class="private_titles"> <span id="pink_destaques"> Orders </span> </h1>
+                <div class="search_box_block">
+                    <div class="search_box_text">
+                    <div class="product_search">
+                        <p class="search_text_product">Select the status:</p>
+                        <input type="text" id="search_box_product" v-model="searchId">
+                    </div>
+                    </div>
+                    <button class="btn_refresh_orders" @click="filterOrdersById">
+                    <img src="assets/images/refresh.png">
+                    </button>
+                </div>          
+
+                <div class="tab" v-for="tab in tabs" :key="tab" v-show="currentPage === tab">
+                    <div class="orders_block">
+                        <div v-for="order in paginatedOrders" :key="order.orderId" class="orders_box">
+                            <h1 class="orders_text_end"><span id="pink_destaques">ID:</span> {{ order.orderId }}</h1>
+                            <h1 class="orders_text"><span id="pink_destaques">Description:</span></h1>
+                            <p class="orders_text" v-for="item in orderItems[order.orderId] || []">
+                                {{ item.quantity }}x {{ products[item.productId]?.name || 'Loading...' }}
+                            </p>                            
+                            <h1 class="orders_text"><span id="pink_destaques">Status:</span></h1>
+                            <select id="dropdown_status" name="dropdown" v-model="order.status">
+                                <option value="Delivered">Delivered</option>
+                                <option value="Made">Made</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="Ordered">Ordered</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <nav class="pagination">
+                    <button v-for="page in tabs" :key="page" @click="currentPage = page" :class="{ active: currentPage === page }">
+                        {{ page }}
+                    </button>
+                </nav>
+
+                <button class="btn_save_reload" @click="saveOrders">
+                    <div class="aux_save_reload">
+                        <img class="icon_save_reload" src="assets/images/save.png">
+                        <p class="btn_txt"> Save and reload </p>
+                    </div>
+                </button>
+                  
+            </div>
+        </section>
+    </section>
+
+    <script>
+        new Vue({
+          el: '#app',
+          data: {
+            currentPage: 1,
+            orders: [],
+            products: {},
+            orderItems: {},
+            searchId: ''
+          },
+          computed: {
+            tabs() {
+              return Math.ceil(this.orders.length / 3);
+            },
+            paginatedOrders() {
+              const start = (this.currentPage - 1) * 3;
+              const end = start + 3;
+              return this.orders.slice(start, end);
+            }
+          },
+          methods: {
+            fetchOrders() {
+              axios.get('http://localhost:8080/api/orders')
+                .then(response => {
+                  this.orders = response.data;
+                  this.orders.forEach(order => this.fetchOrderItems(order.orderId));
+                })
+                .catch(error => {
+                  console.error('Error fetching orders:', error);
+                });
+            },
+            fetchProducts() {
+              axios.get('http://localhost:8080/api/products')
+                .then(response => {
+                  this.products = response.data.reduce((obj, product) => {
+                    obj[product.productID] = product;
+                    return obj;
+                  }, {});
+                })
+                .catch(error => {
+                  console.error('Error fetching products:', error);
+                });
+            },
+            fetchOrderItems(orderId) {
+              axios.get(`http://localhost:8080/api/order-items/by-order/${orderId}`)
+                .then(response => {
+                  Vue.set(this.orderItems, orderId, response.data);
+                })
+                .catch(error => {
+                  console.error('Error fetching order items for order ' + orderId, error);
+                });
+            },
+            filterOrdersById() {
+              if (this.searchId.trim() === '') {
+                this.fetchOrders();
+              } else {
+                const searchIdNum = Number(this.searchId.trim());
+                axios.get(`http://localhost:8080/api/orders/${searchIdNum}`)
+                  .then(response => {
+                    this.orders = [response.data];
+                    this.fetchOrderItems(searchIdNum);
+                  })
+                  .catch(error => {
+                    console.error('Error fetching order with ID:', error);
+                    this.orders = [];
+                  });
+              }
+            },
+            saveOrders() {
+              this.orders.forEach(order => {
+                axios.put(`http://localhost:8080/api/orders/${order.orderId}`, order)
+                  .then(response => {
+                    console.log('Order saved:', response.data);
+                  })
+                  .catch(error => {
+                    console.error('Error saving order:', error);
+                  });
+              });
+              this.fetchOrders();
+            },
+          },
+          mounted() {
+            this.fetchOrders();
+            this.fetchProducts();
+          }
+        });
+      </script>
+      
+
+
+  </body>
+</html>

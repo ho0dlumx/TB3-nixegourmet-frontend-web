@@ -1,0 +1,1459 @@
+@font-face {
+    font-family: Gilroy; 
+    src: url('../fonts/Gilroy-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: KenyanCoffee; 
+    src: url('../fonts/kenyan coffee rg.otf');
+}
+
+body{
+    margin: 0 auto;
+    background-color: #fffaf4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#menu, #intro_home, #arrow_down, #differentials, #home_more, #visit_info, #footer{
+    width: 100%;
+}
+
+#menu{
+    border-bottom: 1px solid #857a6e;
+    background-color: #fffaf4;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    z-index: 1000;
+}
+
+.logo_menu{
+    width: 20%;
+    border: 1px solid #857a6e;
+    align-items: center;
+    height: 100%;
+}
+
+.aux_logo_menu{
+    margin: 0 auto;
+    width: fit-content;
+    height: 90%;
+}
+
+.logo_menu_img{
+    width: auto;
+    height: 100%;
+}
+
+.navigation-bar{
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.navigation-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-bar ul li {
+    display: inline; 
+    margin-right: 20px;
+}
+
+.navigation-bar ul li a {
+    text-decoration: none;
+    color: #857a6e;
+    font-weight: 600; 
+    padding: 10px 15px; 
+    font-size: 1.2rem;
+    font-family: KenyanCoffee;
+}
+
+.navigation-bar ul li a:hover, #current {
+    color:#ff696a;
+    transition: color 0.3s; 
+}
+
+.buttons_menu{
+    width: 30%;
+    border: 1px solid #857a6e;
+    align-items: center;
+    height: 100%;
+}
+
+
+.aux_our_shop{
+    margin: 0 auto;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.icon_btn_our_shop{
+    width: auto;
+    height: 40%;
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+
+.btn_our_shop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: #fce0ae;
+    height: 30px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.btn_our_shop ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btn_our_shop ul li a {
+    font-family: KenyanCoffee;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    float: left;
+    color: #ff6f70;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.btn_our_shop ul li a:hover, #current_btn {
+    color: #60e9d9;
+    transition: background-color 0.3s; 
+    transition: color 0.3s; 
+}
+
+#intro_home{
+    height: 470px;
+    padding-top: 70px;
+}
+
+.decorative_home, .content, .image{
+    float: left;
+    height: 100%;
+}
+
+.decorative_home{
+    width: 2%;
+    background-color: #fffaf4;
+}
+
+.pink_dec{
+    width: 100%;
+    height: 40%;
+    background-color: #ffb6d3;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.content{
+    width: 43%;
+    margin: 0 auto;
+}
+
+.content_intro{
+    width: fit-content;
+    height: 100%;
+    margin-left: 15%;
+}
+
+.content_intro_text{
+    padding-top: 15px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.intro_text{
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    color: #857a6e;
+    text-align: left;
+    font-family: KenyanCoffee;
+    line-height: 0.6;
+}
+
+#text_bite{
+    color: #60e9d9;
+}
+
+#text_delight{
+    text-align: right;
+    color: #ff696a;
+}
+
+.btn_visit_shop{
+    width: 100%;
+    background-color: #fce0ae;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.aux_visit_shop{
+    margin: 0 auto;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.icon_btn_visit_shop{
+    width: auto;
+    height: 80%;
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+.btn_visit_shop ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btn_visit_shop ul li a {
+    font-family: KenyanCoffee;
+    vertical-align: middle;
+    font-size: 2rem;
+    color: #534c44;
+    text-decoration: none;
+}
+
+.btn_visit_shop ul li a:hover {
+    color: #60e9d9;
+}
+
+
+.image{
+    width: 55%;
+    background-color: #fffaf4;
+    background-image: url("../images/lateral_image_home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#arrow_down{
+    background-color: #f7efe0;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow_down_img{
+    width: auto;
+    height: 50%;
+}
+
+#differentials{
+    height: 70vh;
+    background-color: #fffaf4;
+    padding-bottom: 5vh;
+}
+.head_diff{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18%;
+    width:100%;
+}
+.diff_title{
+    font-family: KenyanCoffee;
+    font-size: 3rem;
+    color: #534c44;
+    letter-spacing: 2px;
+}
+
+#diff_title_diffe{
+    color:#ff696a;
+}
+
+.main_diff{
+    display: flex;
+    flex-direction: column;
+    height:82%;
+    width:100%;
+    justify-content: space-between;
+    color:#fffaf4;
+    font-size: 1.5rem;
+    font-family: Gilroy;
+}
+
+.sup_box{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width:65%;
+    height: 20%;
+    background-color: #ff6f70;
+    align-self: flex-start;
+    text-align: right;
+    padding-right: 100px;
+
+}
+
+.comms_box{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width:75%;
+    height: 20%;
+    background-color: #60e9d9;
+    align-self: flex-end;
+    text-align: left;
+    padding-left: 100px;
+}
+
+.price_box{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width:85%;
+    height: 20%;
+    background-color: #fce0ae;
+    align-self: flex-end;
+    text-align: left;
+    padding-left: 100px;
+}
+.love_box{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width:90%;
+    height: 20%;
+    background-color: #ffb6d3;
+    align-self: flex-start;
+    padding-right: 100px;
+    text-align: right;
+
+}
+
+#home_more{
+    height:auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    background-color: white;
+}
+
+.products, .history{
+    height: auto;
+    width: 45%;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-around;
+}
+
+.texts_products, .image_products,.texts_history, .image_history{
+    width: 40%;
+    height: auto;
+}
+
+.homemore_titles{
+    font-family: KenyanCoffee;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #534c44;
+}
+
+#title_prod{
+    color: #ffb6d3;
+}
+
+#title_hist{
+    color: #60e9d9;
+}
+
+.texts_homemore{
+    font-family: Gilroy;
+    color: #534c44;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.btns_homemore{
+    width: 100%;
+    background-color: #fce0ae;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.btns_homemore ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btns_homemore ul li a {
+    font-family: KenyanCoffee;
+    vertical-align: middle;
+    font-size: 2rem;
+    color: #534c44;
+    text-decoration: none;
+}
+
+.btns_homemore ul li a:hover {
+    color: #ff696a;
+}
+
+
+#visit_info{
+    margin: 0 auto;
+    height: 90vh;
+    width: 100%;
+    background-image: url("../images/backimage_info.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.info_title{
+    font-family: KenyanCoffee;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #534c44;
+    letter-spacing: 2px;
+}
+
+#info_visit{
+    color: #ff6f70;
+}
+
+.adress_box{
+    margin-top:15%;
+    width: 45%;
+    height: 20%;
+    background-color: #fffaf4;
+    align-self: flex-end;
+    padding: 4%;
+    display: flex;
+    align-items: center;
+}
+.aux_adress_box{
+    width: 70%;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.adress_text{
+    font-family: Gilroy;
+    font-size: 1rem;
+    color: #534c44;
+    padding-left: 5%;
+}
+
+.btn_maps{
+    margin-top: 2%;
+    width: 100%;
+    background-color: #ff6f70;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 5%;
+}
+
+.btn_maps ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btn_maps ul li a {
+    font-family: KenyanCoffee;
+    font-size: 2rem;
+    color: #fff6eb;
+    text-decoration: none;
+}
+.btn_maps ul li a:hover {
+    color: #fbdfad;
+}
+
+#footer{
+    margin: 0 auto;
+    height: 20vh;
+    width: 96%;
+    background-color: #ff696a;
+    color: white;
+    padding: 2%;
+}
+
+.foot_text_1{
+    text-align: left;
+    font-family: Gilroy;
+    font-size: 1rem; 
+}
+.private_link, .forgot_link {
+    color: inherit;
+    text-decoration: none; 
+    transition: color 0.3s ease;
+    list-style-type: none; 
+}
+
+.private_link:hover,
+.forgot_link:hover {
+    color: #ffb6d3; 
+
+}
+
+.foot_text_2{
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 0.7rem; 
+}
+
+#about, #shop, #products, #contact{
+    padding-top: 10vh;
+    margin: 0 auto;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.about_text, .shop_text, .block_contat_info{
+    width: 30%;
+    padding: 10%;
+    text-align: center;
+    color: #857a6e;
+}
+
+.about_title, .shop_title, .login_title, .contact_title{
+    font-size: 3rem;
+    font-family: KenyanCoffee;
+    padding-bottom: 2%;
+    letter-spacing: 2px;
+}
+
+#about_title_ab, #products_title_p, #contact_title_talk{
+    color: #ff696a;
+}
+
+#shop_title_sp, #login_title_p{
+    color: #60e9d9;
+}
+
+
+.about_text_p, .shop_text_p, .login_text_p, .contact_text_p {
+    font-size: 1.2rem;
+    font-family: Gilroy;
+    line-height: 1.5;
+}
+
+.btn_download{
+    width: 100%;
+    background-color: #fce0ae;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.aux_download{
+    margin: 0 auto;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.icon_btn_download{
+    width: auto;
+    height: 80%;
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+.btn_download ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btn_download ul li a {
+    font-family: KenyanCoffee;
+    vertical-align: middle;
+    font-size: 2rem;
+    color: #534c44;
+    text-decoration: none;
+}
+
+.btn_download ul li a:hover {
+    color: #60e9d9;
+}
+
+.about_img, .shop_img, .block_contact_form{
+    height: 100%;
+    align-self: flex-end;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.about_img{
+    background-image: url("../images/back_about.png");
+    width: 65%;
+}
+.shop_img{
+    background-image: url("../images/back_shop.png");
+    width: 40%;
+}
+
+#products, #login{
+    padding-top: 10vh;
+    margin: 0 auto;
+    height: 90vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.products_text, .login_text{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    color: #857a6e;
+}
+.products_title,
+.products_text_p, .login_title, .login_text_p {
+    margin: 0;
+    padding: 0;
+}
+.products_title{
+    margin-top: 1% ;
+    margin-bottom: 5px;
+    font-size: 3rem;
+    font-family: KenyanCoffee;
+    letter-spacing: 2px;
+}
+
+.products_text_p {
+    font-size: 1.2rem;
+    font-family: Gilroy;
+    margin-bottom: 1%;
+}
+
+
+.products_display{
+    height: 75%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+
+.prod_disp_line{
+    height: 49%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.prod{
+    width: 32%;
+    height: 96%;
+    border: #ff696a solid 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+.prod_img,
+.prod_title,
+.prod_price,
+.prod_desc{
+    margin: 0;
+    padding: 0;
+}
+
+.prod_img{
+    height: 40%;
+    width:auto;
+}
+
+.prod_title{
+    font-size: 1.5rem;
+    font-family: KenyanCoffee;
+    letter-spacing: 2px;
+    color:#ff696a;
+    
+    
+}
+
+.prod_price{
+    font-size: 1.2rem;
+    font-family: KenyanCoffee;
+    color:#857a6e;
+}
+
+.prod_desc{
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1rem;
+    font-family: Gilroy;
+    color:#857a6e;
+}
+
+#login{
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login_box{
+    width: 40%;
+    height: fit-content;
+    padding: 2%;
+    background-color: #fffaf4;
+    border: #60e9d9 solid 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input_box{
+    font-family: Gilroy;
+    font-size: 1rem;
+    background-color: white;
+    border: #fce0ae solid 2px;
+    color: #60e9d9;
+    text-align: center;
+    width: 80%;
+    height: fit-content;
+    padding: 0; 
+    margin: 0;
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    margin-bottom: 1.2%;
+}
+
+.input_box::placeholder{
+    color: #fce0ae;
+}
+
+.forgot_text{
+    align-self: end;
+    padding-right: 10%;
+    font-family: Gilroy;
+    font-size: 1rem;
+    color: #60e9d9;
+
+}
+
+
+.btn_login{
+    width: 80%;
+    background-color: #60e9d9;
+    border: #60e9d9 solid 2px;
+    height: fit-content;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Gilroy;
+    font-size: 1rem;
+    color: white;
+}
+
+
+.block_contat_info{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    justify-content: space-around;
+}
+
+.contact_info{
+    margin: 0 auto;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.contact_text{
+    margin: 0;
+    padding: 0;
+}
+.contact_icon{
+    width: auto;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+
+.contact_info_p{
+    font-size: 1.2rem;
+    font-family: KenyanCoffee;
+    color:#ff696a;
+}
+
+.block_contact_form{
+    background-image: url("../images/contact_back.png");
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact_form{
+    background-color: white;
+    height: 75%;
+    width: 80%;
+    border: #ff696a solid 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.contact_box, .message_box{
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    border: #ff696a solid 5px;
+    font-size: 1rem;
+    font-family: Gilroy;
+    color: #ff696a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contact_box {
+    height: 50px;
+}
+
+.contact_box::placeholder, .message_box::placeholder {
+    color: #ffb6d3;
+}
+
+.message_box{
+    height: 150px;
+}
+
+.btn_contact{
+    margin-top: 1.2%;
+    padding: 0;
+    width: 80%;
+    background-color: #ff696a;
+    border: #ff696a solid 2px;
+    height: 10%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn_contact ul {
+    list-style-type: none; 
+    padding: 1%; 
+    margin: 1%;
+}
+
+.btn_contact ul li a {
+    font-family: KenyanCoffee;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.btn_contact ul li a:hover {
+    color: #ffb6d3;
+}
+
+#private_area_body{
+    background-image: url("../images/private_area_bcg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    width: 100%;
+}
+#private_area{
+    border-radius: 20px;
+    display: flex;
+    background-color: #fffaf4;
+    width: 88%;
+    height: 88vh;
+    align-self: center;
+}
+
+#menu_private{
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 30%;
+    height: 100%;
+    min-height: 300px;
+    background-color: #534c44;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo_menu_private_img{
+    width: 25%;
+    height: auto;
+    padding-top: 10%;
+}
+.menu_private_text_block{
+    height: fit-content;
+    width: 95%;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+    padding-left: 5%;
+
+
+}
+.menu_private_text{
+    font-size: 1rem;
+    font-family: Gilroy;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_menu_private{
+    width: 30px;
+    height: auto;
+    margin-right: 12px;
+}
+.menu_private_text{
+    padding: 5%;
+}
+
+.menu_private_text_block ul {
+    list-style-type: none; 
+}
+
+.menu_private_text_block ul li a {
+    color: #857a6e;
+    text-decoration: none;
+}
+.menu_private_text_block ul li a:hover, #current_private {
+    color: #ffd3a5;
+}
+
+.logout_aux{
+    width: 33.4px;
+    height: 30px;
+    margin-bottom: 5%;
+    margin-right: 10%;
+    display: flex;
+    align-self: flex-end;
+    background-image: url("../images/logout.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer; 
+}
+
+#app_insights, #orders, #private_area_products,#extras{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.private_titles{
+    font-family: KenyanCoffee;
+    font-size: 3rem;
+    color: #534c44;
+    letter-spacing: 2px;
+    margin-left: 8%;
+    width: 100%;
+    margin-bottom:2px ;
+}
+
+#pink_destaques{
+    color: #ff696a;
+}
+.search_box_block {
+    display: flex;
+    margin-left: 8%;
+    width: 84%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    margin-top: 1%;
+    margin-left: 8%;
+    width: 84%;
+    height: fit-content;
+    list-style: none;
+    padding-left: 0; 
+}
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px; 
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.pagination button:hover {
+    background-color: #f0f0f0; 
+}
+
+.pagination .active {
+    background-color: #ff6f71; 
+    color: white; 
+}
+
+.pagination button:not(.active):hover {
+    background-color: #e9e9e9; 
+}
+
+.search_box_text{
+    width: 80%;
+    height: fit-content;
+    margin-right: 5%;
+}
+.product_search,.emp_search{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.search_text_product,.search_text_emp,.type_text_emp{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #534c44;
+    font-size: 1.5rem;
+    font-family: Gilroy;
+    width: 40%;
+}
+
+#search_box_product, #search_box_status,#search_box_emp,#type_box_emp{
+    margin: 0;
+    color: #534c44;
+    font-size: 0.8rem;
+    font-family: Gilroy;
+    width: 60%;
+    height: 100%;
+    justify-self: flex-end;
+    border-radius: 5px;
+    border: #e4e2df solid 2px;
+}
+
+
+
+.btn_refresh, .btn_refresh_orders{
+    width: 15%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #ff696a;
+    border: #ff696a solid 1px;
+    margin-bottom: 3%;
+    padding: 0.5%;
+}
+.btn_refresh img, .btn_refresh_orders img{
+    width: 25%;
+}
+
+.analytical_block, .orders_block{
+    display: flex;
+    margin-left: 8%;
+    width: 84%;
+    height: 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+.analytical_box, .orders_box, .products_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f0ed;
+    border-radius: 5px;
+    width: 30%;
+    height: 85%;
+}
+
+.analytical_titles, .analytical_numbers{
+    font-size: 2rem;
+    font-family: KenyanCoffee;
+    color: #534c44;
+    margin: 0;
+}
+
+.analytical_numbers{
+    font-size: 3rem ;
+    color: #ff696a;
+    margin: 0;
+    margin-top: 10%;
+}
+#croissant_bcg{
+    height: 40%;
+    width: fit-content;
+    align-self: flex-end;
+    margin-right:2%;
+    margin-bottom: 2%;
+}
+
+.btn_refresh_orders{
+    margin-top: 1%;
+    height: 30%;
+}
+
+.orders_block{
+    height: 80%;
+    
+
+}
+
+.orders_text,.orders_text_end, .orders_text_cli{
+    color: #534c44;
+    font-family: Gilroy;
+    font-size: 1.5rem;
+    margin:0;
+    padding:0
+}
+.orders_box{
+    padding: 4%;
+    width: 22%;
+    height: 75%;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.orders_text_end{
+    margin-bottom: 5%;
+}
+
+#dropdown_status{
+    color: #534c44;
+    font-family: Gilroy;
+    font-size: 1.2rem;
+    padding: 2.5%;
+    border-radius: 5px;
+    border: #cdcdcd solid 2px;
+    background-color: #f4f1ed;
+}
+
+
+.btn_save_reload{
+    margin-bottom: 5%;
+    margin-left:20%;
+    margin-right: 20%;
+    width: 60%;
+    background-color: #ff6f71;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    align-self: center;
+}
+
+
+
+.aux_save_reload{
+    margin: 0 auto;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.icon_save_reload{
+    width: auto;
+    height: 60%;
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+.btn_save_reload ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.btn_save_reload ul li a {
+    font-family: Gilroy;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_txt{
+    font-family: Gilroy;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_save_reload ul li a:hover {
+    color: #ffb6d3;
+}
+
+
+.buttons_block{
+    margin-left: 8%;
+    width: 40%;
+    height: fit-content;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.btn_edit, .btn_add, .btn_delete{
+    align-self: center;
+    width: 30%;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    position: relative; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_edit{
+    background-color: #fbb53d;
+}
+.btn_add{
+    background-color: #00ead9;
+}
+.btn_delete{
+    background-color: #ff6f71;
+}
+
+.aux_buttons_prod{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.btn_edit ul, .btn_add ul,.btn_delete ul {
+    list-style-type: none; 
+    padding-left: 15px; 
+}
+
+.icon_buttons_prod{
+    width: auto;
+    height: 75%;
+    vertical-align: middle;
+    padding-left: 0; 
+
+
+}
+
+.btn_add ul li a,.btn_delete ul li a,.btn_edit ul li a   {
+    font-family: KenyanCoffee;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+.products_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    padding: 5%;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+
+
+.text_column, .text_column_desc, .text_column_img{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 24%;
+    height: 90%;
+}
+
+.text_column_desc{
+    width: 33%;
+}
+
+.text_column_img{
+    width: 15%;
+}
+
+.orders_block table {
+    width: 100%; 
+    border-collapse: collapse;
+    border-radius: 8px; 
+}
+
+.orders_block th, .orders_block td {
+    text-align: left; 
+    padding: 1.5% 2%; 
+}
+
+.orders_block th {
+    background-color: #f4f0ed; 
+    color: #ff6f71; 
+    font-family: Gilroy;
+    font-size: 1.2rem;
+}
+
+.orders_block td {
+    border-bottom: 1px solid #eaeaea; 
+    font-family: Gilroy;
+    color: #534c44;
+    font-size: 0.8rem;
+}
+
+.orders_block img {
+    width: auto; 
+    height: 50px; 
+    border-radius: 4px;
+}
+
+
+.text_column_emp, .text_column_cli{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: fit-content;
+    padding-right: 4%;
+    height: 90%;
+}
+
+.orders_text_cli{
+    font-size: 1.4rem;
+}
+
+
+#search_box_emp{
+    width: 50%;
+}
+
+.search_text_emp{
+    width: 50%;
+}
+
+.btn_load_emp{
+    width: 15%;
+    height: 60%;
+    align-self: center;
+    border-radius: 30px;
+    background-color: #ff696a;
+    border: #ff696a solid 1px;
+}
+.btn_load_emp_text{
+    text-decoration: none;
+    color: white;
+    font-weight: 600; 
+    font-size: 0.9rem;
+    font-family: Gilroy;
+}
+.btn_load_emp a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600; 
+    font-size: 0.9rem;
+    font-family: Gilroy;
+}
+.btn_load_emp a:hover {
+    color: #ffb6d3;
+}
+
+.data_text, .data_text_prod{
+    margin-left: 8%;
+    width: 84%;
+    height: fit-content;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    
+}
+
+.data_text_prod{
+
+    margin-left: 8%;
+    width: 84%;
+    height: fit-content;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#type_box_emp{
+    width: 100%;
+}
+
+.type_text_emp{
+    padding-right: 2%;
+    width: fit-content;
+}
+
+.data_text_prod{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
